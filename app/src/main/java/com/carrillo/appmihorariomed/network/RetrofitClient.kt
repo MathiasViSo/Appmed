@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "https://apihorariomed.onrender.com/"
+    const val BASE_URL = "http://192.168.1.38:8081/"
 
     val apiService: ScheduleApiService by lazy {
         Retrofit.Builder()

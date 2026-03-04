@@ -131,11 +131,11 @@ fun ScheduleScreen(viewModel: ScheduleViewModel) {
                 contentPadding = PaddingValues(top = 8.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(viewModel.filteredSchedules, key = { it.id }) { schedule ->
+                items(viewModel.filteredSchedules, key = { it.id ?: 0 }) { schedule ->
                     ScheduleItem(
                         schedule = schedule,
                         onEdit = { viewModel.startEdit(schedule) },
-                        onDelete = { viewModel.deleteSchedule(schedule.id) }
+                        onDelete = { viewModel.deleteSchedule(schedule.id!!) }
                     )
                 }
             }
